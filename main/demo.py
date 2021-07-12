@@ -156,8 +156,7 @@ def main(argv=None):
                     cv2.polylines(img, [box[:8].astype(np.int32).reshape((-1, 1, 2))], True, color=(0, 255, 0),
                                   thickness=2)
                 #cv2.imshow("n",img)
-                if not os.path.exists(os.path.splitext(os.path.basename(im_fn))[0]):
-                    os.makedirs(os.path.splitext(os.path.basename(im_fn))[0])
+                
                 #img = cv2.resize(img, None, None, fx=1.0 / rh, fy=1.0 / rw, interpolation=cv2.INTER_LINEAR)
                 cv2.imwrite(os.path.join(FLAGS.output_path,os.path.splitext(os.path.basename(im_fn))[0], os.path.basename(im_fn)), img[:, :, ::-1])
                 out_file = open(os.path.join(FLAGS.output_path,os.path.splitext(os.path.basename(im_fn))[0], os.path.splitext(os.path.basename(im_fn))[0]) + ".json", "w") 
