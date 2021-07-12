@@ -1,5 +1,5 @@
 # to run the program
 
 
-python ./main/demo.py
+python main/demo.py
 
